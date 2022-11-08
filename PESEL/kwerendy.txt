@@ -1,0 +1,7 @@
+SELECT model, kolor, stan FROM samochody WHERE rocznik > 2010
+
+UPDATE samochody SET kolor = 'ciemny niebieski' WHERE model = 'Yaris'
+
+CREATE USER 'joanna'@'localhost' IDENTIFIED VIA mysql_native_password USING '***';GRANT USAGE ON *.* TO 'joanna'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `samochody`.* TO 'joanna'@'localhost';
+
+REVOKE ALL PRIVILEGES ON `samochody`.* FROM 'joanna'@'localhost'; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER ON `samochody`.* TO 'joanna'@'localhost'; 
